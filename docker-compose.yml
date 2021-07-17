@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx
+    build: .
+    environment:
+      NODE_ENV: production
+    ports:
+      - 80:80
