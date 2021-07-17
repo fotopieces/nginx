@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: my-kube
+spec:
+  selector:
+    matchLabels:
+      app: my-kube
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: my-kube
+    spec:
+      containers:
+      - name: my-kube
+        image: fotopiece/myapp:1.0
+        ports:
+          - containerPort: 80
